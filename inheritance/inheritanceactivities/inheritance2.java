@@ -74,8 +74,9 @@ class DeluxeRoom extends HotelRoom
 }
 	
 }
-class DeluxeACRoom extends DeluxeRoom
+class DeluxeACRoom extends HotelRoom
 {
+	protected int ratePerSqFeet;
 	//constructor
 	public DeluxeACRoom(String hotelName, Integer numberOfSqFeet, Boolean hasTV, Boolean hasWifi) {
 		super(hotelName, numberOfSqFeet, hasTV, hasWifi);
@@ -107,7 +108,7 @@ class SuiteAcRoom extends HotelRoom
 	}
 	
 }
-public class inheritance2 {
+/*public class inheritance2 {
 		public static void main(String[] args) {
 			Scanner sc=new Scanner(System.in);
 			int num;
@@ -227,5 +228,5 @@ public class inheritance2 {
 				}
 			}
 		}
-	}
+	}*/
 
