@@ -72,7 +72,7 @@ class Vehicle{
 class TwoWheeler extends Vehicle{
 
 	private boolean kickStartAvailable;
-
+	//get set
 	public TwoWheeler(String make, String vehicleNumber, String fuelType, Integer fuelCapacity, Integer cc,boolean kickStartAvailable) {
 		super(make, vehicleNumber, fuelType, fuelCapacity, cc);
 		this.kickStartAvailable=kickStartAvailable;
@@ -80,29 +80,43 @@ class TwoWheeler extends Vehicle{
 	}
     void displayDetailInfo()
     {
-    	System.out.println("displays the availability of kick start");
+    	System.out.println("---Detail Information---");
+	string a;
+	if(this.kickStartAvailable)
+	{
+		a="yes";
+	}
+	else
+	{
+		a="no";
+	}
+	system.out.println("kick start Available:"+a.toUpperCase());
     }
 }
 
-class FourWheeler extends TwoWheeler{
+class FourWheeler extends Vehicle{
 
 	private String audioSystem;
 	private int numberOfDoors;
-
+	//get set
 	public FourWheeler(String make, String vehicleNumber, String fuelType, Integer fuelCapacity, Integer cc,
-			boolean kickStartAvailable, String audioSystem, int numberOfDoors) {
-		super(make, vehicleNumber, fuelType, fuelCapacity, cc, kickStartAvailable);
+			 String audioSystem, int numberOfDoors) {
+		super(make, vehicleNumber, fuelType, fuelCapacity, cc);
 		this.audioSystem=audioSystem;
 		this.numberOfDoors=numberOfDoors;
 		// TODO Auto-generated constructor stub
 	}
 	void displayDetailInfo()
 	{
-		System.out.println("---Basic Information--");
+		System.out.println("---Detail Information--");
+		System.out.println("Audio System:"+(this.audioSystem));
+		System.out.println("Number of Doors:"+(this.numberOfDoors));
 		
-	}*/
+		
+	}
 
 }
+
 }
 
 	
