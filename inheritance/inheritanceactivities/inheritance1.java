@@ -116,7 +116,97 @@ class FourWheeler extends Vehicle{
 	}
 
 }
-
+public class inheritance1 {
+public static void main(String[] args)
+{
+	String make = null;
+	String vehiclenumber = null;
+	String fuletype = null;
+	String fuelcapacity = null;
+	String cc = null;
+	boolean kick=false;
+	String kicksstart;
+	String audio=null;
+	int numofdoors=0;
+	Scanner sc=new Scanner(System.in);
+	System.out.println("1. Four Wheeler\n2. Two Wheeler");
+	System.out.println("Enter Vehicle Type:");
+	int num=sc.nextInt();
+	switch(num)
+	{
+		case 1:
+			FourWheeler fv=new FourWheeler(make, vehiclenumber, fueltype, fuelcapacity, cc, audio, numofdoors);
+			System.out.println("Vehicle Make:");
+			make=sc.next();
+			fv.setMake(make);
+			System.out.println("Vehicle Number:");
+			vehiclenumber=sc.next();
+			fv.setVehicleNumber(vehiclenumber);
+			System.out.peintln("Fuel Tyoe:\n1.Petrol \n2.Deisel");
+			num=sc.nextInt();
+			if(num==1)
+			{
+				fv.setFuelType("Petrol");
+			}
+			else
+			{
+				fv.setFuelType("Diesel");
+			}
+			System.out.println("Fuel Capacity:");
+			fuelcapacity=sc.nextInt();
+			fv.setFuelCapacity(fuelcapacity);
+			System.out.println("Engine CC:");
+			fcc=sc.nextInt();
+			fv.setCC(cc);
+			System.out.println("Audio System:");
+			audio=sc.nextInt();
+			fv.setaudio(audio);
+			System.out.println("Number of doors:");
+			Numofdoors=sc.nextInt();
+			fv.set.Numofdoors(Numofdoors);
+			
+			fv.displayBasicInfo();
+			fv.displayDetailInfo();
+		case 2:
+			TwoWheeler tv=new TwoWheeler(make, vehiclenumber, fueltype, fuelcapacity, cc, kick);
+			System.out.println("Vehicle Make:");
+			make=sc.next();
+			tv.setMake(make);
+			System.out.println("Vehicle Number:");
+			vehiclenumber=sc.next();
+			tv.setVehicleNumber(vehiclenumber);
+			System.out.peintln("Fuel Tyoe:\n1.Petrol \n2.Deisel");
+			num=sc.nextInt();
+			if(num==1)
+			{
+				tv.setFuelType("Petrol");
+			}
+			else
+			{
+				tv.setFuelType("Diesel");
+			}
+			System.out.println("Fuel Capacity:");
+			fuelcapacity=sc.nextInt();
+			tv.setFuelCapacity(fuelcapacity);
+			System.out.println("Engine CC:");
+			fcc=sc.nextInt();
+			tv.setCC(cc);
+			System.out.println("kick start available(yes/no):");
+			kickstart=sc.next();
+			if(kickstart.equals("yes"))
+			{
+				tv.setkickstartavailable(true);
+			}
+			else
+			{
+				tv.setkickstartavailable(false);
+			}
+			
+			tv.displayBasicInfo();
+			tv.displayDetailInfo();
+		
+	}
+}
 }
 
 	
