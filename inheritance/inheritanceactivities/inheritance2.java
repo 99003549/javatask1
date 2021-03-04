@@ -2,7 +2,6 @@ package inheritanceactivities;
 
 import java.util.Scanner;
 
-
 class HotelRoom
 {
 	protected String hotelName;
@@ -32,7 +31,10 @@ class HotelRoom
 	}
 	public void setHasWifi(boolean hasWifi) {
 		this.hasWifi = hasWifi;
+			
+				
 	}
+	
 	
 	public HotelRoom(String hotelName,Integer numberOfSqFeet,Boolean hasTV,Boolean hasWifi)
 	{
@@ -49,15 +51,16 @@ class HotelRoom
 	{
 		return( 0);
 	}
+}
 class DeluxeRoom extends HotelRoom
 {
 	int ratePerSqFeet;
 
 	public DeluxeRoom(String hotelName, Integer numberOfSqFeet, Boolean hasTV, Boolean hasWifi) {
 		super(hotelName, numberOfSqFeet, hasTV, hasWifi);
-		// DeluxeRoom construct
+		
 		this.ratePerSqFeet=10;
-}
+     }
 	public int getRatePerSqFeet()
 	{
 		if((this.hasWifi))
@@ -73,14 +76,14 @@ class DeluxeRoom extends HotelRoom
 	
 }
 	
-}
+
 class DeluxeACRoom extends HotelRoom
 {
 	protected int ratePerSqFeet;
-	//constructor
+	
 	public DeluxeACRoom(String hotelName, Integer numberOfSqFeet, Boolean hasTV, Boolean hasWifi) {
 		super(hotelName, numberOfSqFeet, hasTV, hasWifi);
-		// DeluxeACRoom constructor
+		
 		this.ratePerSqFeet=12;
 	}
 }
@@ -88,13 +91,13 @@ class DeluxeACRoom extends HotelRoom
 class SuiteAcRoom extends HotelRoom
 {
 	private int ratePerSqFeet;
-	//constructor
+	
 	public SuiteAcRoom(String hotelName, Integer numberOfSqFeet, Boolean hasTV, Boolean hasWifi) {
 		super(hotelName, numberOfSqFeet, hasTV, hasWifi);
-		// SuiteAcRoom constructor
+		
 		this.ratePerSqFeet=15;
 	}
-	//getRatePerSqFeet function
+	
 	public int getRatePerSqFeet()
 	{
 		if((this.hasWifi))
@@ -107,25 +110,66 @@ class SuiteAcRoom extends HotelRoom
 		}
 	}
 	
+
+
+
 }
-/*public class inheritance2 {
-		public static void main(String[] args) {
-			Scanner sc=new Scanner(System.in);
-			int num;
-			String s;
-			System.out.println("Hotel Tarrif Calculator\n1.Deluxe Room\n2.Deluxe AC Room\n3.Suite AC Room");
-			System.out.println("Select Room Type:");
-			num=sc.nextInt();
-			if(num==1)
+
+public class inheritanceactivity2 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int num;
+		String s;
+		System.out.println("Hotel Tarrif Calculator\n1.Deluxe Room\n2.Deluxe AC Room\n3.Suite AC Room");
+		System.out.println("Select Room Type:");
+		num=sc.nextInt();
+		if(num==1)
+		{
+			DeluxeRoom h1=new DeluxeRoom(null, 0, false, false);
+			
+			System.out.println("Hotel Name:");
+			h1.setHotelName(sc.next());
+			
+			System.out.println("Room Square Feet Area:");
+			h1.setNumberOfSqFeet(sc.nextInt());
+			
+			System.out.println("Room has TV(yes/no):");
+			s=sc.next();
+			if(s.equals("yes"))
 			{
-				DeluxeRoom h1=new DeluxeRoom(null, 0, false, false);
-				//name
+				h1.setHasTV(true);
+			}
+			else
+			{
+				h1.setHasTV(false);
+			}
+			
+			System.out.println("Room has wifi(yes/no):");
+			s=sc.next();
+			if(s.equals("yes"))
+			{
+				h1.setHasWifi(true);
+			}
+			else
+			{
+				h1.setHasWifi(false);
+			}
+			
+			
+			System.out.println("Room Tariff per day is:"+h1.calculateTariff(h1.getRatePerSqFeet()));
+		}
+		else
+		{
+			if(num==2)
+			{
+				DeluxeACRoom h1=new DeluxeACRoom(null, 0, false, false);
+				
 				System.out.println("Hotel Name:");
 				h1.setHotelName(sc.next());
-				//Room Square Feet Area
+				
 				System.out.println("Room Square Feet Area:");
 				h1.setNumberOfSqFeet(sc.nextInt());
-				//TV
+				
 				System.out.println("Room has TV(yes/no):");
 				s=sc.next();
 				if(s.equals("yes"))
@@ -136,7 +180,7 @@ class SuiteAcRoom extends HotelRoom
 				{
 					h1.setHasTV(false);
 				}
-				//Wifi
+				
 				System.out.println("Room has wifi(yes/no):");
 				s=sc.next();
 				if(s.equals("yes"))
@@ -148,21 +192,21 @@ class SuiteAcRoom extends HotelRoom
 					h1.setHasWifi(false);
 				}
 				
-				//Room tariff
+				
 				System.out.println("Room Tariff per day is:"+h1.calculateTariff(h1.getRatePerSqFeet()));
 			}
 			else
 			{
-				if(num==2)
+				if(num==3)
 				{
-					DeluxeACRoom h1=new DeluxeACRoom(null, 0, false, false);
-					//name
+					SuiteAcRoom h1=new SuiteAcRoom(null, 0, false, false);
+					
 					System.out.println("Hotel Name:");
 					h1.setHotelName(sc.next());
-					//Room Square Feet Area
+					
 					System.out.println("Room Square Feet Area:");
 					h1.setNumberOfSqFeet(sc.nextInt());
-					//TV
+					
 					System.out.println("Room has TV(yes/no):");
 					s=sc.next();
 					if(s.equals("yes"))
@@ -173,7 +217,7 @@ class SuiteAcRoom extends HotelRoom
 					{
 						h1.setHasTV(false);
 					}
-					//Wifi
+					
 					System.out.println("Room has wifi(yes/no):");
 					s=sc.next();
 					if(s.equals("yes"))
@@ -185,48 +229,11 @@ class SuiteAcRoom extends HotelRoom
 						h1.setHasWifi(false);
 					}
 					
-					//Room tariff
+				
 					System.out.println("Room Tariff per day is:"+h1.calculateTariff(h1.getRatePerSqFeet()));
-				}
-				else
-				{
-					if(num==3)
-					{
-						SuiteAcRoom h1=new SuiteAcRoom(null, 0, false, false);
-						//name
-						System.out.println("Hotel Name:");
-						h1.setHotelName(sc.next());
-						//Room Square Feet Area
-						System.out.println("Room Square Feet Area:");
-						h1.setNumberOfSqFeet(sc.nextInt());
-						//TV
-						System.out.println("Room has TV(yes/no):");
-						s=sc.next();
-						if(s.equals("yes"))
-						{
-							h1.setHasTV(true);
-						}
-						else
-						{
-							h1.setHasTV(false);
-						}
-						//Wifi
-						System.out.println("Room has wifi(yes/no):");
-						s=sc.next();
-						if(s.equals("yes"))
-						{
-							h1.setHasWifi(true);
-						}
-						else
-						{
-							h1.setHasWifi(false);
-						}
-						
-						//Room tariff
-						System.out.println("Room Tariff per day is:"+h1.calculateTariff(h1.getRatePerSqFeet()));
-					}
 				}
 			}
 		}
-	}*/
-
+	}
+	}
+		
