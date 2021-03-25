@@ -83,7 +83,7 @@ public class CRUD {
 						System.out.println("Enter phone number:");
 						c1.setEmployeephoneNumber(sc.next());
 						//emailid
-						System.out.println("Enter phone EmailId:");
+						System.out.println("Enter Employee Id");
 						c1.setEmployeeId(sc.next());
 						l.add(c1);
 			 			break;
