@@ -11,9 +11,9 @@ public class employeesort implements Comparable<employeesort>{
 	    public employeesort() {
 	    }
 	 
-	    public employeesort( int i,String n, int f) {
+	    public employeesort( int i,String n, int s) {
 	           name = n;
-	           salary = f;
+	           salary = s;
 	           id = i;
 	    }
 	 
